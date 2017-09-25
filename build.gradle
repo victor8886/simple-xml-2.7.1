@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+task makeJar(type:Copy){
+    from('build/intermediates/bundles/release/')
+    into('build/libs/')
+    include('simple.jar')
+    rename('build/libs/simple.jar','build/libs/simple-xml-2.7.1.jar')
+}
+makeJar.dependsOn(build)
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
