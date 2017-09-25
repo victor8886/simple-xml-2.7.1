@@ -57,4 +57,5 @@ public @interface Root {
     * @return true if strict parsing is enabled, false otherwise
     */ 
    boolean strict() default false;
+  //此处原为true，但实际工作中，最好为false，防止字段不匹配造成的解析数据失败
 }
